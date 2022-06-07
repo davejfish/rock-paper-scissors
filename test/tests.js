@@ -20,12 +20,18 @@ test('test your pure functions...', (expect) => {
 
 test('test player winning cases', (expect) => {
     expect.equal(score('rock', 'scissors'), 1);
+    expect.equal(score('paper', 'rock'), 1);
+    expect.equal(score('scissors', 'paper'), 1);
 });
 
-// test('test cpu win cases', (expect) => {
-    
-// });
+test('test cpu win cases', (expect) => {
+    expect.equal(score('rock', 'paper'), -1);
+    expect.equal(score('paper', 'scissors'), -1);
+    expect.equal(score('scissors', 'rock'), -1);
+});
 
-// test('test draw cases', (expect) => {
-    
-// });
+test('test draw cases', (expect) => {
+    expect.equal(score('rock', 'rock'), 0);
+    expect.equal(score('paper', 'paper'), 0);
+    expect.equal(score('scissors', 'scissors'), 0);
+});
