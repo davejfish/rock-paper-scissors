@@ -8,18 +8,52 @@
 
 ## Making a plan
 
-1. Make a drawing of your app. **Simple "wireframes"**
-1. Once you have a drawing, **name the HTML elements** you'll need to realize your vision**
-1. Determine the Components (sections) of your app.
-1. Within each component:
-    - For each HTML element ask: **Why do I need this?**
-    - Does this element need **static content**, or is the content **dynamic state**?
-    - If dynamic, what is **state** and what is it called
-    - **Find all the 'events'** (user clicks, form submit, on load etc) in your app. 
-1. For events, ask one by one, "What happens when" for each of these events. Does any state change?
-1. Once we know the _why_ of elements, state, and events -- think about how to implement the "Why" as a "How"
-1. Think about how to **validate each of your features** according to a Definition of Done
-1. Consider what features **_depend_ on what other features**. Use this dependency logic to figure out what order to complete tasks.
+<img src='wireframe.png'>
+
+1. build html/css
+2. grab dom elements
+3. add event listeners
+4. build game logic
+5. build finding the champion
+6. build adding classes for hiding
+7. build updateDisplay
+
+1. components:
+
+- hidden class to display sections when choosing
+
+2. state:
+- wins:
+- losses:
+- draws:
+- games:
+- throwArray: ['rock', 'paper', 'scissors']
+- playerThrow
+- cpuThrow
+
+3. events
+- playerSelect
+- cpuSelect
+- result
+- updateDisplay
+- updateScore
+
+playerSelect:
+ - player selects image and clicks select button, updates playerThrow
+ 
+ cpuSelect:
+ - chooses cpu input and updates cpuSelect
+
+result:
+- finds winner and loser
+
+updateDisplay: 
+- which parts to hide when picking and not picking
+
+updateScore:
+- update the display for wins losses draws and games
+
+
 
 ## Guide to `app.js`
 
@@ -53,6 +87,7 @@ Detailed description:
     - Logical pseudo-event of the initial page load
     - Like a "Handle Action" function, but code just goes at bottom of page
 
+
 ### Components
 
 Logically grouped parts of the UI. A simple app may only have one component. Break each of these sections down into:
@@ -60,6 +95,7 @@ Logically grouped parts of the UI. A simple app may only have one component. Bre
 1. Define variables and assign via document methods (`getElementById`). A DOM element should only ever belong to one component
 1. Display functions. These utilize the state and dom variables to perform dom updates. They may utilize user-facing formatting functions
 1. Subscribe to needed events on DOM elements. These should update state or call state update functions
+
 
 ### Import
 
