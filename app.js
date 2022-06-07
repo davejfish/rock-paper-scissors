@@ -23,7 +23,7 @@ const arr = ['rock', 'paper', 'scissors'];
     // optional: handle functions for shared event handler logic
 
 // get player and cpu input, update states, update display
-function handleWinner(playerThrow) {
+function handleThrow(playerThrow) {
     // get cpu throw
     cpuThrow = getRandomItem(arr);
     
@@ -64,15 +64,15 @@ const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 
 rock.addEventListener('click', () => {
-    handleWinner('rock');
+    handleThrow('rock');
 });
 
 paper.addEventListener('click', () => {
-    handleWinner('paper');
+    handleThrow('paper');
 });
 
 scissors.addEventListener('click', () => {
-    handleWinner('scissors');
+    handleThrow('scissors');
 });
 
 // get dom elements and update outcome display based on inputs
