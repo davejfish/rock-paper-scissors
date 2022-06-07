@@ -20,54 +20,55 @@
 
     <main>
 
-        <section class="centered">
-            <section id="player-input" class="player-input">
-
-            <div id="rock-box" class="centered">
-
-                <img class="rps-image" src="assets/janken_gu.png">
-
-            </div>
-
-            <div id="paper-box" class="centered">
-
-                <img src="assets/janken_pa.png" class="rps-image">
-                
-            </div>
-
-            <div id="scissor-box" class="centered">
-
-                <img class="rps-image"  src="assets/janken_choki.png">
-                
-            </div>
-
-            </section>
-
-            <button id="throw">throw down!</button>
-
-        </section>
         
-        
+        <section id="player-input" class="player-input">
+
+        <div class="centered">
+
+             <button id="rock">
+                 <img class="rps-image" src="assets/rock.png">
+            </button>
+
+         </div>
+
+        <div class="centered">
+
+             <button id="paper">
+                 <img src="assets/paper.png" class="rps-image">
+             </button>
+                
+                
+         </div>
+
+        <div class="centered">
+
+            <button id="scissors">
+                <img class="rps-image"  src="assets/scissors.png">
+             </button>
+                
+        </div>
+
+        </section>  
 
         <section id="outcome" class="outcome">
 
-            <div id="player-throw" class="centered">
+            <div class="centered">
 
-                <img class="rps-image" src="assets/janken_choki.png">
+                <img id="player-thrown" class="rps-image" src="">
 
             </div>
 
-            <div id="win-loss" class="centered">
+            <div class="centered">
 
-                <span>
+                <span id="win-loss">
                     win/loss
                 </span>
                 
             </div>
 
-            <div id="cpu-throw" class="centered">
+            <div class="centered">
 
-                <img class="rps-image" src="assets/janken_choki.png">
+                <img id="cpu-thrown" class="rps-image" src="">
                 
             </div>
 

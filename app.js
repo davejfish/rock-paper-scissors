@@ -6,7 +6,6 @@ let losses = 0;
 let draw = 0;
 let games = 0;
 
-let playerThrow = 'rock';
 let cpuThrow = '';
 
 const arr = ['rock', 'paper', 'scissors'];
@@ -32,11 +31,9 @@ function handleWinner(playerThrow) {
     // update states
     updateStates(result);
 
-    // store selection for background color change
-    let pThrow = playerThrow;
-
     // update the display with the new results
     updateDisplay();
+    updateWinLoss(result, playerThrow, cpuThrow);
 }
 
 function updateStates(result) {
@@ -54,14 +51,40 @@ function updateStates(result) {
     }
 }
 
-function playerSelect() {
-    // get value for playerThrow
-}
+const gu = document.getElementById('rock');
+const pa = document.getElementById('paper');
+const choki = document.getElementById('scissors');
 
-const rollResult = document.getElementById('throw');
-rollResult.addEventListener('click', () => {
-    handleWinner(playerThrow);
+gu.addEventListener('click', () => {
+    handleWinner('rock');
 });
+
+pa.addEventListener('click', () => {
+    handleWinner('paper');
+});
+
+choki.addEventListener('click', () => {
+    handleWinner('scissors');
+});
+
+const playerChoice = document.getElementById('player-thrown');
+const cpuChoice = document.getElementById('cpu-thrown');
+const winLossDisplay = document.getElementById('win-loss');
+
+function updateWinLoss(result, playerThrow, cpuThrow) {
+    playerChoice.src = 'assets/' + playerThrow + '.png';
+    cpuChoice.src = 'assets/' + cpuThrow + '.png';
+    
+    if (result === 1) {
+        winLossDisplay.textContent = 'You Win!';
+    }
+    else if (result === 0) {
+        winLossDisplay.textContent = 'Draw Game';
+    }
+    else {
+        winLossDisplay.textContent = 'You Lose';
+    }
+}
 
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
