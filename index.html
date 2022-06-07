@@ -20,41 +20,65 @@
 
     <main>
 
-        <section id="player-input" class="player-input">
+        <section class="centered">
+            <section id="player-input" class="player-input">
 
-            <div id="rock-box" class="box">
+            <div id="rock-box" class="centered">
 
                 <img class="rps-image" src="assets/janken_gu.png">
 
             </div>
 
-            <div id="paper-box" class="box">
+            <div id="paper-box" class="centered">
 
                 <img src="assets/janken_pa.png" class="rps-image">
                 
             </div>
 
-            <div id="scissor-box" class="box">
+            <div id="scissor-box" class="centered">
 
                 <img class="rps-image"  src="assets/janken_choki.png">
                 
             </div>
 
+            </section>
+
+            <button id="throw">throw down!</button>
+
         </section>
+        
+        
 
         <section id="outcome" class="outcome">
 
-            <div id="player-throw" class="box">
+            <div id="player-throw" class="centered">
+
+                <img class="rps-image" src="assets/janken_choki.png">
 
             </div>
 
-            <div id="win-loss" class="box">
+            <div id="win-loss" class="centered">
+
+                <span>
+                    win/loss
+                </span>
                 
             </div>
 
-            <div id="cpu-throw" class="box">
+            <div id="cpu-throw" class="centered">
+
+                <img class="rps-image" src="assets/janken_choki.png">
                 
             </div>
+
+        </section>
+
+        <section id="score-display" class="score-display">
+
+            <p>
+                <span id="wins-display">0</span> wins, <span id="losses-display">0</span> losses and 
+                <span id="draw-results">0</span> draws in <span id="total-games">0</span> games.
+            </p>
 
         </section>
 
