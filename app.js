@@ -5,6 +5,7 @@ let wins = 0;
 let losses = 0;
 let draw = 0;
 let games = 0;
+let picking = 1;
 
 let cpuThrow = '';
 
@@ -30,6 +31,10 @@ function handleWinner(playerThrow) {
 
     // update states
     updateStates(result);
+
+    // update picking
+    picking = 0;
+    updateClasses();
 
     // update the display with the new results
     updateDisplay();
@@ -85,6 +90,29 @@ function updateWinLoss(result, playerThrow, cpuThrow) {
         winLossDisplay.textContent = 'You Lose';
     }
 }
+
+const outcome = document.getElementById('outcome');
+const playerInput = document.getElementById('player-input');
+
+function updateClasses() {
+    if (picking) {
+        outcome.classList = 'centered';
+        outcome.classList.add('hidden');
+        playerInput.classList = 'player-input';
+    }
+    else {
+        playerInput.classList = 'player-input';
+        playerInput.classList.add('hidden');
+        outcome.classList = 'centered';
+    }
+}
+
+const playAgain = document.getElementById('play-again');
+
+playAgain.addEventListener('click', () => {
+    picking = 1;
+    updateClasses();
+});
 
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
