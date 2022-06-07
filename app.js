@@ -22,6 +22,7 @@ const arr = ['rock', 'paper', 'scissors'];
         // re-display components (which ones?)
     // optional: handle functions for shared event handler logic
 
+// get player and cpu input, update states, update display
 function handleWinner(playerThrow) {
     // get cpu throw
     cpuThrow = getRandomItem(arr);
@@ -41,6 +42,7 @@ function handleWinner(playerThrow) {
     updateWinLoss(result, playerThrow, cpuThrow);
 }
 
+// update states based on the result of the match
 function updateStates(result) {
     if (result === 1) {
         wins++;
@@ -56,22 +58,24 @@ function updateStates(result) {
     }
 }
 
-const gu = document.getElementById('rock');
-const pa = document.getElementById('paper');
-const choki = document.getElementById('scissors');
+// get dom elements add event listeners to pass on player choice
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 
-gu.addEventListener('click', () => {
+rock.addEventListener('click', () => {
     handleWinner('rock');
 });
 
-pa.addEventListener('click', () => {
+paper.addEventListener('click', () => {
     handleWinner('paper');
 });
 
-choki.addEventListener('click', () => {
+scissors.addEventListener('click', () => {
     handleWinner('scissors');
 });
 
+// get dom elements and update outcome display based on inputs
 const playerChoice = document.getElementById('player-thrown');
 const cpuChoice = document.getElementById('cpu-thrown');
 const winLossDisplay = document.getElementById('win-loss');
@@ -91,6 +95,7 @@ function updateWinLoss(result, playerThrow, cpuThrow) {
     }
 }
 
+// get dom elements and update hidden class
 const outcome = document.getElementById('outcome');
 const playerInput = document.getElementById('player-input');
 
@@ -107,6 +112,7 @@ function updateClasses() {
     }
 }
 
+// get dom element playagain button and add updateClasses function to play again, rehidding what you dont need
 const playAgain = document.getElementById('play-again');
 
 playAgain.addEventListener('click', () => {
@@ -114,6 +120,7 @@ playAgain.addEventListener('click', () => {
     updateClasses();
 });
 
+//grab all elements elements to update score display
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
 const drawResults = document.getElementById('draw-results');
